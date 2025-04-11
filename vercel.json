@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "app.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "app.py"
+    }
+  ],
+  "env": {
+    "CLIENT_SECRETS_FILE": ".gauth.json",
+    "REDIRECT_URI": "https://taskiq.io/auth/google",
+    "TOKEN_STORAGE_DIR": "./tokens"
+  }
+}
